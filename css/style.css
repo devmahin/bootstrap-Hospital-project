@@ -71,20 +71,20 @@ h1{
     font-size: 3.875rem;
     margin-bottom: 1.25rem;
     font-weight: 600;
-    /* color: var(--text-white); */
+    color: var(--text-white);
     font-family: var(--secondary-font);
 }
 h2{
     font-size: 2.875rem;
     font-weight: 600;
-    /* color: var(--text-white); */
+    color: var(--text-white);
     font-family: var(--secondary-font);
 }
 h3{
     font-size: 2.25rem;
     margin-bottom: 1.25rem;
     font-weight: 600;
-    /* color: var(--text-white); */
+    color: var(--text-white);
     font-family: var(--secondary-font);
 }
 h4{
@@ -124,7 +124,7 @@ p{
 .card{
     border-radius: .625rem;
     background-color: var(--text-white);
-    box-shadow: .5084rem 1.1419rem 2.5rem 0 rgb(0 0 0 / 8%);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     transition: all .4s;
     -webkit-transition: all .4s;
     border: 0;
@@ -150,7 +150,9 @@ p{
     .card{
         padding: 2.5rem 1.875rem;
     }
-   
+    .banner-wraper .animate-img .anim1{
+        left: -5.6875rem;
+    }
 }
 
 @media (max-width: 991px){
@@ -180,6 +182,9 @@ p{
     .card{
         padding: 1.875rem 1rem;
     }
+    .banner-wraper .animate-img .anim1{
+        left: -2.6875rem;}
+   
    
 }
 
@@ -195,10 +200,21 @@ p{
     h5{
         font-size: 1.25rem;
     }
-   
+    .banner-wraper .animate-img .anim1{
+        /* left: -1rem; */
+        margin-left:3rem;
+    }
    
 }
 
+@media (max-width: 360px){
+    .banner-wraper .animate-img .anim1{
+        margin-left:5rem;
+
+    }
+   
+
+}
 
 /* navbar start */
 .header-wrapper .navbar{
@@ -232,5 +248,72 @@ p{
     width: 100%;
     background-color: var(--bg-white);
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    z-index: 999;
 }
+.banner-wraper {
+    background-image: url("../images/top-banner-img/Top-banner.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.banner-wraper p{
+    width: 80%;
+    color: var(--text-white);
+}
+.banner-wraper .top-right-sec{
+    position: relative;
+    background-image: url("../images/top-banner-img/top-right-bg.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+}
+.banner-wraper .top-right-sec .animate-img{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 22;
+
+}
+.banner-wraper .animate-img .anim1{
+    left: -5.6875rem;
+    position: absolute;
+    -webkit-animation-name: movebounce;
+    animation-name: movebounce;
+    -webkit-animation-delay: 100ms;
+    animation-delay: 100ms;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+.banner-wraper .animate-img .anim2{
+    margin-left: 5.6875rem;
+    -webkit-animation-name: movebounce;
+    animation-name: movebounce;
+    -webkit-animation-delay: 200ms;
+    animation-delay: 200ms;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-duration: 2.5s;
+    animation-duration: 2.5s;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+
+
 /* navbar end*/
+.home .card:hover{
+    transform: translateY(-8px);
+    transition: 1s;
+}
